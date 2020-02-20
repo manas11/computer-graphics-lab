@@ -10,14 +10,14 @@ int xc = 320, yc = 240;
 void plot_point(int x, int y)
 {
   glBegin(GL_POINTS);
-  glVertex2i(xc+x, yc+y);
-  glVertex2i(xc+x, yc-y);
-  glVertex2i(xc+y, yc+x);
-  glVertex2i(xc+y, yc-x);
-  glVertex2i(xc-x, yc-y);
-  glVertex2i(xc-y, yc-x);
-  glVertex2i(xc-x, yc+y);
-  glVertex2i(xc-y, yc+x);
+  glVertex2i(xc + x, yc + y);
+  glVertex2i(xc + x, yc - y);
+  glVertex2i(xc + y, yc + x);
+  glVertex2i(xc + y, yc - x);
+  glVertex2i(xc - x, yc - y);
+  glVertex2i(xc - y, yc - x);
+  glVertex2i(xc - x, yc + y);
+  glVertex2i(xc - y, yc + x);
   glEnd();
 }
 
@@ -25,26 +25,26 @@ void plot_point(int x, int y)
 // circle drawing algorithm
 void bresenham_circle(int r)
 {
-  int x=0,y=r;
+  int x = 0, y = r;
 
-  float pk=3-(2*r);
+  float pk = 3 - (2 * r);
 
   /* Plot the points */
   /* Plot the first point */
   int k;
 
-  while(x <= y)
+  while (x <= y)
   {
-        plot_point(x,y);
+    plot_point(x, y);
 
-    if(pk < 0)
-      pk = pk + (4*x)+6;
+    if (pk < 0)
+      pk = pk + (4 * x) + 6;
     else
     {
-      pk = pk + 4*(x - y) + 10;
-            y = y - 1;
+      pk = pk + 4 * (x - y) + 10;
+      y = y - 1;
     }
-        x = x + 1;
+    x = x + 1;
   }
   glFlush();
 }
@@ -58,20 +58,19 @@ void draw_circle(void)
 
 void Init()
 {
-  glClearColor(0.0,1.0,1.0,0);
-  glColor3f(0.0,0.0,0.0);
-  gluOrtho2D(0 , 640 , 0 , 480);
+  glClearColor(0.0, 1.0, 1.0, 0);
+  glColor3f(0.0, 0.0, 0.0);
+  gluOrtho2D(0, 640, 0, 480);
 }
 
 void main(int argc, char **argv)
 {
-  glutInit(&argc,argv);
+  glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-  glutInitWindowPosition(0,0);
-  glutInitWindowSize(640,480);
+  glutInitWindowPosition(0, 0);
+  glutInitWindowSize(640, 480);
   glutCreateWindow("bresenham_circle");
   Init();
   glutDisplayFunc(draw_circle);
   glutMainLoop();
 }
-

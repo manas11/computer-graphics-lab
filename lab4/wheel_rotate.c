@@ -8,7 +8,7 @@ int xc = -300, yc = 0;
 int r1 = 100;
 int r2 = 30;
 float angle = 360.0;
-int x=0;
+int x = 0;
 
 // Plot eight points using circle's symmetrical property
 void plot_point(int x, int y)
@@ -27,7 +27,7 @@ void plot_point(int x, int y)
 
 void RotateTime(int n)
 {
-    x+=1;
+    x += 1;
     angle -= 1.0;
     if (angle >= 0)
         angle += 360;
@@ -35,6 +35,7 @@ void RotateTime(int n)
     glutPostRedisplay();
     glutTimerFunc(25, RotateTime, 0);
 }
+
 void acute_bresenham(float x1, float y1, float x2, float y2)
 {
     float dx = x2 - x1, dy = y2 - y1;
@@ -149,7 +150,6 @@ void bresenham_circle(int r)
 }
 
 void draw_circle(void)
-
 {
     glClear(GL_COLOR_BUFFER_BIT);
     bresenham_circle(r1);
@@ -160,7 +160,7 @@ void draw_circle(void)
 void display()
 {
     glPushMatrix();
-    glTranslatef(xc+x, yc, 0);
+    glTranslatef(xc + x, yc, 0);
     glRotatef(angle, 0.0, 0.0, 1.0);
     glTranslatef(-xc, -yc, 0);
     // xc-=2;
