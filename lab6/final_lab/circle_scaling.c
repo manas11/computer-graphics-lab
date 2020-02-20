@@ -69,10 +69,9 @@ void draw_translated_fig(){
 
 void Init()
 {
-
   glClearColor(1.0,1.0,1.0,0);
   glColor3f(0.0,0.0,0.0);
-  gluOrtho2D(-400, 400 , -400 , 400);
+  gluOrtho2D(-683, 683 , -384 , 384);
 }
 
 void display(void){
@@ -93,7 +92,7 @@ void main(int argc, char **argv)
   scanf("%d",&tx);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowPosition(0,0);
-  glutInitWindowSize(400,400);
+  glutInitWindowSize(1366,768);
   glutCreateWindow("bresenham_circle");
   Init();
   glutDisplayFunc(display);

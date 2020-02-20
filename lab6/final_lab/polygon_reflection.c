@@ -5,7 +5,6 @@
 int x1,x2,x3,x4,y1,y2,y3,y4,tx,ty;
 void display (void)
  {
-
  	glClear (GL_COLOR_BUFFER_BIT);
  	glColor3f (1.0, 1.0, 1.0);
  	glBegin(GL_POLYGON);
@@ -44,7 +43,7 @@ void display_poly_translated(void){
   void init(void)
  {
  glClearColor (0.0, 0.0, 0.0, 0.0);
- gluOrtho2D(-500.0, 500.0, -500.0, 500.0);
+  gluOrtho2D(-683, 683 , -384 , 384);
  }
 
 int main(int argc, char** argv)

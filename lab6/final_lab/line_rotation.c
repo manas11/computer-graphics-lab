@@ -88,7 +88,7 @@ for(k=0;k<steps;k++)
  void init(void)
  {
  glClearColor (0.0, 0.0, 0.0, 0.0);
- gluOrtho2D(-500.0, 500.0, -500.0, 500.0);
+  gluOrtho2D(-683, 683 , -384 , 384);
  }
 
 int main(int argc, char** argv)

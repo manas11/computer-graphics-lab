@@ -36,7 +36,7 @@ void display_poly_rotated(void){
   void init(void)
  {
  glClearColor (0.0, 0.0, 0.0, 0.0);
- gluOrtho2D(-500.0, 500.0, -500.0, 500.0);
+  gluOrtho2D(-683, 683 , -384 , 384);
  }
 
 int main(int argc, char** argv)
@@ -52,7 +52,7 @@ scanf("%d %d",&x4,&y4);
 
  glutInit(&argc, argv);
  glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
- glutInitWindowSize (600,600);
+ glutInitWindowSize (1366,768);
  glutInitWindowPosition (100, 100);
  glutCreateWindow ("Simple DDA ");
  init ();
