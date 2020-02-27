@@ -37,6 +37,16 @@ void init(void)
 
 int main(int argc, char **argv)
 {
+	printf("enter first point of polygon\n");
+	scanf("%d %d", &x1, &y1);
+	printf("enter 2nd point of polygon\n");
+	scanf("%d %d", &x2, &y2);
+	printf("enter 3rd point of polygon\n");
+	scanf("%d %d", &x3, &y3);
+	printf("enter 4th point of polygon\n");
+	scanf("%d %d", &x4, &y4);
+	printf("enter translation function\n");
+	scanf("%d %d", &tx, &ty);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(1366, 768);
