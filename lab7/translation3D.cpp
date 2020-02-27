@@ -4,7 +4,6 @@
 /* Global variables */
 char title[] = "3D Shapes";
  
-/* Initialize OpenGL Graphics */
 void initGL() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
    glClearDepth(1.0f);                   // Set background depth to farthest
