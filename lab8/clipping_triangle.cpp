@@ -6,7 +6,7 @@
 #define H 1366
 #define W 768
 
-int n;
+int n=3;
 float xd1[50],yd1[50], xd2[50], yd2[50];
 using namespace std;
 
@@ -97,9 +97,11 @@ void myInit(void)
     gluOrtho2D(-H/2,H/2,-W/2,W/2);
 }
 
-void display()
+void mykey(unsigned char key,int x,int y)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    if(key=='c')
+    {  cout<<"Hello";
+glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(1.0,0.0,0.0);
 
    glBegin(GL_LINE_LOOP);
@@ -117,18 +119,62 @@ for(int i=0;i<n;i++){
    glVertex2i(xd2[i],yd2[i]);
    glEnd();
 }
+
+        glFlush();
+    }
+}
+
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(1.0,0.0,0.0);
+
+   glBegin(GL_LINE_LOOP);
+   glVertex2i(xmin,ymin);
+   glVertex2i(xmin,ymax);
+   glVertex2i(xmax,ymax);
+   glVertex2i(xmax,ymin);
+   glEnd();
+
+
+for(int i=0;i<n;i++){
+   glColor3f(0.0,0.0,1.0);
+   glBegin(GL_LINES);
+   glVertex2i(xd1[i],yd1[i]);
+   glVertex2i(xd2[i],yd2[i]);
+   glEnd();
+}
+
+
         glFlush();
 }
 
 int main(int argc,char** argv)
 {   
-        printf("enter numebr of lines (n) : ");
-            cin>>n;
-      for(int i=0;i<n;i++){
-    printf("enter coordinates off the line %d (x1 y1, x2 y2) :", i);
-    cin>>xd1[i]>>yd1[i]>>xd2[i]>>yd2[i];
-    }
-    
+    float t1,t2,t3,y1,y2,y3;
+    printf("enter coordinates off the triangle (x1 y1, x2 y2, x3 y3) :");
+    cin>>t1>>y1;
+        cin>>t2>>y2;
+    cin>>t3>>y3;
+
+    xd1[0] = t1;
+    yd1[0] = y1;
+xd2[0] = t2;
+    yd2[0] = y2;
+
+
+    xd1[1] = t1;
+    yd1[1] = y1;
+xd2[1] = t3;
+    yd2[1] = y3;
+
+
+    xd1[2] = t2;
+    yd1[2] = y2;
+xd2[2] = t3;
+    yd2[2] = y3;
+
+
     printf("enter the rectangle coordintes (xmin, ymin, xmax, ymax): ");
     cin>>xmin>>ymin>>xmax>>ymax;
 
@@ -138,6 +184,8 @@ int main(int argc,char** argv)
     glutInitWindowPosition(0,0);
     glutCreateWindow("cohen sutherland algo");
     glutDisplayFunc(display);
+            glutKeyboardFunc(mykey);
+
     myInit();
     glutMainLoop();
     return 0;
