@@ -20,3 +20,12 @@ gcc file.c -lGL -lGLU -lglut
 g++ file.cpp -lGL -lGLU -lglut 
 ./a.out
 ```
+## Contributor and maintainer
+
+This project and repository is created and maintained by:
+
+* **Manas Gupta**
+
+ Email: manasgupta1109@gmail.com
+    
+ Github: [manas11](https://github.com/manas11)
