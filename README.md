@@ -1,7 +1,7 @@
 # Computer Graphics Lab Programs
 - This repository contains the week wise programs done in the Computer Graphics Lab.
-- Programs done under the Computer Graphics Course 6th semeseter
-- These programs are based on usage of OpenGL tools
+- The programs are done under the Computer Graphics Course 6th semester
+- OpenGL tools and functions are used in these programs.
 
 
 # Guidelines for running the programs
