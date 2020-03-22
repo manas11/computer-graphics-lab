@@ -1,6 +1,8 @@
 # Computer Graphics Lab Programs
 - This repository contains the week wise programs done in the Computer Graphics Lab.
+- Programs done under the Computer Graphics Course 6th semeseter
 - These programs are based on usage of OpenGL tools
+
 
 # Guidelines for running the programs
 ## Install the glut package
